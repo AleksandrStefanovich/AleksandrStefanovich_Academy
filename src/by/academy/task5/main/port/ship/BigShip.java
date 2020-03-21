@@ -20,8 +20,11 @@ public class BigShip implements Ship {
                 this.builder.append(deck[i].getContainer().getContainer()+"\n");
                             }
             this.shipInfo = ""+builder;
-        }}
+        }
+    else{this.shipInfo = "Wrong size for ship";}
+    }
     public BigShip(int sizeOfContainer1, int sizeOfContainer2,int water1, int shape1,int height1,int water2, int shape2,int height2,int water3, int shape3,int height3,int water4, int shape4,int height4,int water5, int shape5,int height5,int water6, int shape6,int height6) {
+        if (((sizeOfContainer1 == SMALL)&&(sizeOfContainer2==BIG))||((sizeOfContainer1 == BIG)&&(sizeOfContainer2==SMALL))){
         if ((sizeOfContainer1 == SMALL)&&(sizeOfContainer2==BIG)){
             this.deck = new Deck[6];
             this.deck[0] = new Deck(new SmallContainer(water1,shape1,height1));
@@ -43,7 +46,7 @@ public class BigShip implements Ship {
         for (int i = 0; i < 6;i++){
             this.builder.append(deck[i].getContainer().getContainer()+"\n");
         }
-        this.shipInfo = ""+builder;
+        this.shipInfo = ""+builder;}else{this.shipInfo = "Wrong size for ship";}
     }
     public BigShip(int sizeOfContainer1, int sizeOfContainer2,int water1, int shape1,int height1,int water2, int shape2,int height2,int water3, int shape3,int height3,int water4, int shape4,int height4,int water5, int shape5,int height5,int water6, int shape6,int height6,int water7, int shape7,int height7,int water8, int shape8,int height8) {
         if ((sizeOfContainer1 == SMALL)&&(sizeOfContainer2==SMALL)){
@@ -60,7 +63,7 @@ public class BigShip implements Ship {
                 this.builder.append(deck[i].getContainer().getContainer()+"\n");
             }
             this.shipInfo = ""+builder;
-        }}
+        }else{this.shipInfo = "Wrong size for ship";}}
 
     @Override
     public String getShipInfo() {

@@ -7,7 +7,7 @@ import static by.academy.task5.main.Constants.*;
 public class Main {                                 //только 6 кораблей целесообразно создавать т.к. больше нет вариантов формирования корабля
     public static void main(String[] args) {       // the first argument in brackets is size of containers on the deck
         Port[] port = new Port[10];                //the first and the second arguments in brackets are size of containers on two decks
-        port[0] = new Port(new SmallShip(BIG,HARDWATER,CONE,20,LIGHTWATER,CUBE,20));
+        port[0] = new Port(new SmallShip(BIG,HARDWATER,CONE,15,LIGHTWATER,CUBE,20));
         port[1] = new Port(new SmallShip(SMALL,HARDWATER,CYLINDER,100,LIGHTWATER,CONE,15,HARDWATER,CUBE,10,LIGHTWATER,CYLINDER,50));
         port[2] = new Port(new BigShip(BIG, BIG,HARDWATER,CYLINDER,20,LIGHTWATER,CUBE,20,HARDWATER,CUBE,45,LIGHTWATER,CONE,55));
         port[3] = new Port(new BigShip(SMALL, BIG,HARDWATER,CYLINDER,100,LIGHTWATER,CONE,15,HARDWATER,CUBE,10,LIGHTWATER,CYLINDER,50,LIGHTWATER,CYLINDER,40,HARDWATER,CONE,10));
