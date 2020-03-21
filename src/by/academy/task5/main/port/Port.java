@@ -1,6 +1,6 @@
-package main.port;
+package by.academy.task5.main.port;
 
-import main.port.ship.Ship;
+import by.academy.task5.main.port.ship.Ship;
 
 public class Port {
     private Ship ship;

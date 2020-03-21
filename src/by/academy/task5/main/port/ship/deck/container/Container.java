@@ -1,4 +1,4 @@
-package main.port.ship.deck.container;
+package by.academy.task5.main.port.ship.deck.container;
 
 public interface Container {
 

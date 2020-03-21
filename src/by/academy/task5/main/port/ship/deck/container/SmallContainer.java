@@ -1,6 +1,6 @@
-package main.port.ship.deck.container;
+package by.academy.task5.main.port.ship.deck.container;
 
-import static main.Constants.*;
+import static by.academy.task5.main.Constants.*;
 
 public class SmallContainer implements Container {
     private int density;

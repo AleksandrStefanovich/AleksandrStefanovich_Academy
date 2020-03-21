@@ -1,6 +1,6 @@
-package main.port.ship.deck;
+package by.academy.task5.main.port.ship.deck;
 
-import main.port.ship.deck.container.Container;
+import by.academy.task5.main.port.ship.deck.container.Container;
 
 public class Deck {
     private Container container;

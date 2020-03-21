@@ -1,7 +1,7 @@
-package main.port.ship;
+package by.academy.task5.main.port.ship;
 
-import main.port.ship.deck.*;
-import main.port.ship.deck.container.*;
+import by.academy.task5.main.port.ship.deck.*;
+import by.academy.task5.main.port.ship.deck.container.*;
 
 public class SmallShip implements Ship {
     private String shipInfo;

@@ -1,8 +1,8 @@
-package main.port.ship;
+package by.academy.task5.main.port.ship;
 
-import main.port.ship.deck.Deck;
-import main.port.ship.deck.container.*;
-import static main.Constants.*;
+import by.academy.task5.main.port.ship.deck.Deck;
+import by.academy.task5.main.port.ship.deck.container.*;
+import static by.academy.task5.main.Constants.*;
 
 public class BigShip implements Ship {
     private String shipInfo;

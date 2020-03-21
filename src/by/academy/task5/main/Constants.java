@@ -1,4 +1,4 @@
-package main;
+package by.academy.task5.main;
 
 public class Constants {
     public static final int LIGHTWATER = 1;

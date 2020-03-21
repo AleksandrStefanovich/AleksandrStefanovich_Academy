@@ -1,8 +1,8 @@
-package main;
+package by.academy.task5.main;
 
-import main.port.Port;
-import main.port.ship.*;
-import static main.Constants.*;
+import by.academy.task5.main.port.Port;
+import by.academy.task5.main.port.ship.*;
+import static by.academy.task5.main.Constants.*;
 
 public class Main {                                 //только 6 кораблей целесообразно создавать т.к. больше нет вариантов формирования корабля
     public static void main(String[] args) {       // the first argument in brackets is size of containers on the deck
