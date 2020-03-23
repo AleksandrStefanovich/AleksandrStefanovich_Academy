@@ -21,16 +21,28 @@ public class CalculatorWithOperator {
         return result;
     }
     public double modulus(double a){
-        result = Math.abs(a);
+        if (a < 0 ){result = a * -1;}else {
+        result = a;}
         return result;
     }
-    public double square(double base, double exponent){
-       result = pow(base, exponent);
-        return result;
+    public double square(double base, double exponent){ //метод не может в дробные степени
+       if (exponent == 0) {return 1;}else{
+           if (exponent == 1){return base;}else{
+       if (exponent > 1){
+        result = base;
+        for (int i = 1; i < exponent; i++){
+           result *= base;
+       }}else if(exponent < 0){
+           result = 1;
+           for (int i = -1; i > exponent; i--);
+           result /= base;
+       }
+        return result;}}
     }
     public double sqrt(double base, double exponent){
         result = pow(base,(double)1/exponent);
         return result;
+
     }
 
 }
