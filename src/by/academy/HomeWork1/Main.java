@@ -14,5 +14,6 @@ public class Main {
 
         result = (float)calc.add((calc.add(calc.square(calc.divide(28, 5),2),calc.multiply(15, 7))),4.1);
         System.out.println(result);
+        System.out.println(calc.sqrt(27,2));
     }
 }
