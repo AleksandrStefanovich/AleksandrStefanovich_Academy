@@ -58,8 +58,8 @@ public class CalculatorWithOperator {
     }
         counter = 1;
          for (int i = 1; i < 4; i++ ){ counter /=10;
-             for(int j = 0; j < 10; j++){
-                 if (square(j * counter, exponent) > base) {
+             for(double j = 0; j < 10; j++){
+                 if ((result2 + square(j * counter, exponent)) > base) {
                      result2 = result2 + (j - 1) * counter; break;
              }
          }
