@@ -5,25 +5,20 @@ import static java.lang.StrictMath.pow;
 public class CalculatorWithOperator {
    private double result;
     public double divide(double a, double b){
-        result = a / b;
-       return result;
+               return a / b;
    }
     public double multiply(double a, double b){
-        result = a * b;
-        return result;
+                return a * b;
     }
     public double add(double a, double b){
-        result = a + b;
-        return result;
+                return a + b;
     }
     public double subtract(double a, double b){
-        result = a - b;
-        return result;
+                return a - b;
     }
     public double modulus(double a){
-        if (a < 0 ){result = a * -1;}else {
-        result = a;}
-        return result;
+        if (a < 0 ){return -a;}else {
+        return a;}
     }
     public double square(double base, double exponent){ //метод не может в дробные степени
        if (exponent == 0) {return 1;}else{
