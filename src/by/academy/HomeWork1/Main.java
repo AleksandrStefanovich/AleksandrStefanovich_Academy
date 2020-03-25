@@ -15,6 +15,6 @@ public class Main {
         System.out.println(result);
         System.out.println(calc.sqrt(4096,2));
 
-        
+
     }
 }
