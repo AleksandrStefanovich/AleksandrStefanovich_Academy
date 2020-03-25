@@ -50,16 +50,16 @@ public class CalculatorWithOperator {
                 }
             }
         for (int j = (int)counter; j >= 1; j /= 10){ //поиск первой и последующих цифр до запятой
-        for (int i = 0; i < 10; i++) {
-            if (square(i * counter, exponent) > base) {
-                result2 = result2 + (i - 1) * counter; break;
+        for (int i = 0; i < 11; i++) {
+            if (square(result2 + i * j, exponent) > base) {
+                result2 = result2 + (i - 1) * j; break;
             }
         }
     }
         counter = 1;
-         for (int i = 1; i < 4; i++ ){ counter /=10; //поиск трёх цифр после запятой. пока не работает
-             for(double j = 0; j < 10; j++){
-                 if ((result2 + square(j * counter, exponent)) > base) {
+         for (int i = 1; i < 4; i++ ){ counter /=10; //поиск трёх цифр после запятой
+             for(double j = 0; j < 11; j++){
+                 if (( square(result2 + j * counter, exponent)) > base) {
                      result2 = result2 + (j - 1) * counter; break;
              }
          }
