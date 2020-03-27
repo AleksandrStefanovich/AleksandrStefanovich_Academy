@@ -1,5 +1,7 @@
-package by.academy.HomeWork1.task2;
+package by.academy.HomeWork1;
 
+
+import by.academy.HomeWork1.CalculatorWithOperator;
 
 public class Main {
     public static void main(String[] args) {

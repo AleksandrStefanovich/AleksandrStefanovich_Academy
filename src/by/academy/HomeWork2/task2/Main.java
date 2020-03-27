@@ -1,4 +1,4 @@
-package by.academy.HomeWork2;
+package by.academy.HomeWork2.task2;
 
 public class Main {
 

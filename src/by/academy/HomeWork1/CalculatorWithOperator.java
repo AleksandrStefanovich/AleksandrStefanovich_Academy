@@ -1,4 +1,4 @@
-package by.academy.HomeWork1.task2;
+package by.academy.HomeWork1;
 
 import static java.lang.StrictMath.pow;
 
