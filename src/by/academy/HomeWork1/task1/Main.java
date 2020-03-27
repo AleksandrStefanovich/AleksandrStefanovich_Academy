@@ -1,10 +1,5 @@
 package by.academy.HomeWork1.task1;
 
-
-
-
-
-
 public class Main {
     public static void main(String[] args) {
 
@@ -20,8 +15,17 @@ public class Main {
         System.out.println(countryInfo.compareTo(countryFromString));
         System.out.println(countryInfo1.compareTo(countryInfo2));   //метод берёт ordinal-ы элемента
                                                                     // и отнимает от первого второй
-
-
-
+        CountryAreaComparator compar = new CountryAreaComparator();
+        Countries countryComparator1 = Countries.RUSSIA;
+        Countries countryComparator2 = Countries.ITALY;
+        int areaComparsionOut = compar.compare(countryComparator1, countryComparator2);
+        switch (areaComparsionOut){
+            case 0:
+                System.out.println(countryComparator1 + " и " + countryComparator2 + " имеют одинаковую площадь"); break;
+            case 1:
+                System.out.println("Площадь " + countryComparator1 +" больше площади " + countryComparator2); break;
+            case -1:
+                System.out.println("Площадь " + countryComparator2 + " больше площади " + countryComparator2); break;
+        }
     }
 }
