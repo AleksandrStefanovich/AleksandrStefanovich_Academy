@@ -5,7 +5,6 @@ public class CalculatorWithCounter implements ICalculator {
     private int countOperation = 0;
 
     public int getCountOperation() {
-        this.countOperation++;
         return countOperation;
     }
 
