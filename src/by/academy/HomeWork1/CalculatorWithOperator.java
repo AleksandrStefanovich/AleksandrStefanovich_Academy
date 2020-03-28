@@ -1,8 +1,8 @@
 package by.academy.HomeWork1;
 
-import static java.lang.StrictMath.pow;
 
-public class CalculatorWithOperator {
+
+public class CalculatorWithOperator implements ICalculator {
    private double result;
    private double result2;
     public double divide(double a, double b){
@@ -35,8 +35,9 @@ public class CalculatorWithOperator {
        }
         return result;}}
     }
-    public double sqrt(double base, double exponent) {
-
+    public double sqrt(double base1, double exponent) {
+        double base;
+        if (base1<0){base = -base1;} else {base = base1;}
         double counter = 1;
         result2 = 0;
         for (int i = 1; square(i,exponent) < base; i *= 10) { //поиск едениц, десятков, сотен и т.д.
@@ -64,7 +65,14 @@ public class CalculatorWithOperator {
              }
          }
          }
-        return result2;
-            }
+         if (base1<0&&exponent%2==0) System.out.println("Чётному корню передано отрицательное число");
+
+         if (base1<0&&exponent%2!=0)
+        return -result2;
+        else
+            return result2;
+
+
+                        }
 
 }
