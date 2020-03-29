@@ -10,5 +10,12 @@ public class Main2 {
         result2 = calc2.add((calc2.add(calc2.square(calc2.divide(28, 5),2),calc2.multiply(15, 7))),4.1);
         System.out.println("Result is "+result1 +" in "+ ((CalculatorWithCounter) calc1).getCountOperation()+" operations.");
         System.out.println("Result is "+result2 +" in "+ ((CalculatorWithCounter) calc2).getCountOperation()+" operations.");
+
+        CalculatorStringExpression calc3 = new CalculatorStringExpression();
+        calc3.calculateExpression("4.1 + 15 * 7 + (28 / 5)^2");
+        CalculatorStringExpression calc4 = new CalculatorStringExpression();
+        calc4.calculateExpression("2+2*2");
+        CalculatorStringExpression calc5 = new CalculatorStringExpression();
+        calc5.calculateExpression("4/4-2+|-10|*2^3");
     }
 }
