@@ -17,5 +17,7 @@ public class Main2 {
         calc4.calculateExpression("2+2*2");
         CalculatorStringExpression calc5 = new CalculatorStringExpression();
         calc5.calculateExpression("4/4-2+|-10|*2^3");
+        CalculatorStringExpression calc6 = new CalculatorStringExpression();
+        calc6.calculateExpression("E*PI");
     }
 }

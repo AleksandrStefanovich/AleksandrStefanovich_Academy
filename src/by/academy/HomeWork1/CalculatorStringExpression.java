@@ -3,17 +3,27 @@ package by.academy.HomeWork1;
 public class CalculatorStringExpression {
     private StringBuilder builder = new StringBuilder();
     private ICalculator calc = new CalculatorWithMath();
-    private String operators = "+-*/|";
+    private String operators = "+-*/|^()";
+    private String nums = "0.123456789 ";
 
-    public double calculateExpression(String str){
+    public double calculateExpression(String stre){
         int reverseCheck = 0;
 
+        String strpi = stre.replaceAll("PI",String.valueOf(Math.PI));
+        String str = strpi.replaceAll("E",String.valueOf(Math.E));
+
         builder.append(str.replaceAll(" ",""));
-        
+
         if (operators.contains(str.charAt(str.length()-1)+"")){
             System.out.println("Неверное выражение");
             return 0;}
-
+        for (int i = 0; i < str.length();i++){
+            if (operators.contains(str.charAt(i)+"")||nums.contains(str.charAt(i)+"")){
+            }else {
+                System.out.println("Неверное выражение");
+                return 0;
+            }
+        }
 
         while (builder.toString().contains("(")){ findAndCountInBrackets();}
         while (builder.toString().contains("^")){ findAndCountPower(); }
@@ -37,13 +47,9 @@ public class CalculatorStringExpression {
             else if (builder.charAt(0)=='-'){
                 System.out.println(builder);
                 return Double.parseDouble(String.valueOf(builder));
-
-
-
             }
             else findAndCountMinus(); }
         while (builder.toString().contains("+")){ findAndCountPlus(); }
-
 
         System.out.println(builder);
     if (reverseCheck == 1){
@@ -156,7 +162,6 @@ String str3 = builder.substring(a,b);
         String str3 = builder.substring(a,b);
         builder.replace(a,b,countOperation(builder.substring(a,b)));
 
-
     }
     private void findAndCountMinus() {
         int a = builder.indexOf("-");
@@ -181,16 +186,6 @@ String str3 = builder.substring(a,b);
 
 
     }
-
-
-
-
-
-
-
-
-
-
 
     private String countOperation(String c){
         double a;
