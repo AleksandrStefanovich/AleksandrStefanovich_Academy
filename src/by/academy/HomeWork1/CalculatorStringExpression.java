@@ -7,13 +7,13 @@ public class CalculatorStringExpression {
 
     public double calculateExpression(String str){
         int reverseCheck = 0;
+
         builder.append(str.replaceAll(" ",""));
-        if (operators.contains(str.charAt(0)+"")){
-            System.out.println("Неверное выражение");
-            return 0;}
+        
         if (operators.contains(str.charAt(str.length()-1)+"")){
             System.out.println("Неверное выражение");
             return 0;}
+
 
         while (builder.toString().contains("(")){ findAndCountInBrackets();}
         while (builder.toString().contains("^")){ findAndCountPower(); }
