@@ -9,31 +9,31 @@ public class CalculatorStringExpression {
     public double calculateExpression(String stre){
         int reverseCheck = 0;
 
-        String strpi = stre.replaceAll("PI",String.valueOf(Math.PI));
+        String strpi = stre.replaceAll("PI",String.valueOf(Math.PI)); //заменяем пи и е на цифры
         String str = strpi.replaceAll("E",String.valueOf(Math.E));
 
-        builder.append(str.replaceAll(" ",""));
+        builder.append(str.replaceAll(" ","")); //убираем пробелы при наличии
 
-        if (operators.contains(str.charAt(str.length()-1)+"")){
+        if (operators.contains(str.charAt(str.length()-1)+"")){ //проверяем законченность выражения
             System.out.println("Неверное выражение");
             return 0;}
         for (int i = 0; i < str.length();i++){
-            if (operators.contains(str.charAt(i)+"")||nums.contains(str.charAt(i)+"")){
+            if (operators.contains(str.charAt(i)+"")||nums.contains(str.charAt(i)+"")){ //проверяем все ли символы цифры и знаки
             }else {
                 System.out.println("Неверное выражение");
                 return 0;
             }
         }
 
-        while (builder.toString().contains("(")){ findAndCountInBrackets();}
-        while (builder.toString().contains("^")){ findAndCountPower(); }
-        while (builder.toString().contains("|")){ findAndCountModulus(); }
+        while (builder.toString().contains("(")){ findAndCountInBrackets();}  //считаем все скобки
+        while (builder.toString().contains("^")){ findAndCountPower(); }      //считаем все степени
+        while (builder.toString().contains("|")){ findAndCountModulus(); }    //модули и т.д
         while (builder.toString().contains("*")){ findAndCountMult(); }
         while (builder.toString().contains("/")){ findAndCountDiv(); }
         while (builder.toString().contains("-")){
-            if (builder.charAt(0)=='-'&& builder.toString().contains("+")){
-             builder.deleteCharAt(0);
-             int plusCounter = builder.indexOf("+");
+            if (builder.charAt(0)=='-'&& builder.toString().contains("+")){   //проверяем если выражение
+             builder.deleteCharAt(0);                                         //начинается с отрицательного числа
+             int plusCounter = builder.indexOf("+");                          //и инверсируем знаки при необходимости
              builder.replace(plusCounter,plusCounter+1,"-");
              reverseCheck=1;
             }
@@ -57,13 +57,13 @@ public class CalculatorStringExpression {
     else{
         return Double.parseDouble(String.valueOf(builder));}
     }
-    private void findAndCountInBrackets(){
+    private void findAndCountInBrackets(){  //выделяем операцию внутри скобок
         int a; int b;
         String c;
        a = builder.indexOf("(");
        b = builder.indexOf(")");
        c = builder.substring(a + 1,b);
-       builder.replace(a,b+1,countOperation(c));
+       builder.replace(a,b+1,countOperation(c));   //отправляем считаться и заменяем в строке на результат
       }
     private void findAndCountPower(){
         int a = builder.indexOf("^");
@@ -106,8 +106,8 @@ String str3 = builder.substring(a,b);
         String str2 = builder.substring(a+1);
         for (int i = str1.length()-1; i>=0; i--){
             counter++;
-            if (operators.contains(str1.charAt(i)+"")){
-                a = i+1; break;
+            if (operators.contains(str1.charAt(i)+"")){     //проверки на случай, если число находится в начале или конце строки
+                a = i+1; break;                             //т.е. не окружены символами
             }else a = 0;
         }
         for (int i = 0; i < str2.length();i++){
@@ -188,7 +188,7 @@ String str3 = builder.substring(a,b);
 
     }
 
-    private String countOperation(String c){
+    private String countOperation(String c){     //подсчёт выражения внутри переданной строки из двух чисел и символа
         double a;
         double b;
 
