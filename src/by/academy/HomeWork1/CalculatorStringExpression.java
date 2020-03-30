@@ -113,7 +113,8 @@ String str3 = builder.substring(a,b);
         for (int i = 0; i < str2.length();i++){
             if  (operators.contains(str2.charAt(i)+"")){
                 b = a + i + counter; break;
-            }else{b = a + str2.length() + counter;}
+            }else{if (a==0){b = 1 + str2.length() + counter;}else
+                b = a + str2.length() + counter;}
         }
         String str3 = builder.substring(a,b);
         builder.replace(a,b,countOperation(builder.substring(a,b)));
