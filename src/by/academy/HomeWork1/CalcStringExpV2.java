@@ -4,7 +4,7 @@ public class CalcStringExpV2 {
     private StringBuilder fullExpression = new StringBuilder();
     private ICalculator calc = new CalculatorWithMath();
     private String operators = "+-*/|^";
-    private String nums = "0.123456789 ()";
+
 
     public double calculateExpression(String str) {
         fullExpression.append(formatExpression(str));
@@ -14,23 +14,66 @@ public class CalcStringExpV2 {
         }
         return workOnExpression(fullExpression);
     }
-    private double workOnExpression(StringBuilder str){
+    private double workOnExpression(StringBuilder str) {
         int reverseCheck = 0;
         double result = 0;
+        int i = 0;
+        int j = 0;
 
-        countBrackets(str);
-        while (str.toString().contains("^")){countPower(str);}
-        while (str.toString().contains("*")){countMult(str);}
-        while (str.toString().contains("/")){countDiv(str);}
+        while (str.toString().contains("(")) { countBrackets(str); }
+        while (str.toString().contains("^")) { countPower(str); }
+        while (str.toString().contains("*")) { countMult(str); }
+        while (str.toString().contains("/")) { countDiv(str); }
+        if (str.charAt(0) == '-') {
+            for (i = 1; i < str.length(); i++) {
+                if (str.charAt(i) == '+' || str.charAt(i) == '-') {
+                    result = Double.parseDouble(str.substring(0, i));
+                    break;
+                }
+                if (i == str.length() - 1) {
+                    return Double.parseDouble(str.substring(0, i));
+                }
+            }
+        } else {
+                for (i = 1; i < str.length(); i++) {
+                    if (str.charAt(i) == '+' || str.charAt(i) == '-') {
+                        result = Double.parseDouble(str.substring(0, i));
+                        break;
+                    }
+                    if (i == str.length() - 1) {
+                        return Double.parseDouble(str.substring(0, i));
+                    }
+                }
+            }
+        for (i = 0; i < str.length(); i++) {
+            if (str.charAt(i) == '-') {
+                for (j = i + 1; j < str.length(); j++) {
+                    if (str.charAt(j) == '-' || str.charAt(j) == '+') {
+                        result -= Double.parseDouble(str.substring(i+1, j));
+                        break;
+                    } else if(j == str.length()-1){ result -= Double.parseDouble(str.substring(i+1, j));}
+                }
+            }
+        }
+        for (i = 0; i < str.length(); i++) {
+            if (str.charAt(i) == '+') {
+                for (j = i + 1; j < str.length(); j++) {
+                    if (str.charAt(j) == '-' || str.charAt(j) == '+') {
+                        result += Double.parseDouble(str.substring(i+1, j));
+                        break;
+                    } else if(j == str.length()-1){ result += Double.parseDouble(str.substring(i+1, j));}
+                }
+            }
+        }
 
 
-        return result;
+            return result;
     }
 
 
+
     private void countBrackets(StringBuilder str) {
-        int subExpressionStart;
-        int subExpressionEnd;
+        int bracketsCounter = 0;
         int i = 0;
         StringBuilder subExpression = new StringBuilder();
         StringBuilder subToSend = new StringBuilder();
@@ -40,27 +83,27 @@ public class CalcStringExpV2 {
             if (str.charAt(i) == '(') {
                 subExpression.append(str.substring(i+1));
                 str.delete(i, str.length());
+                bracketsCounter++;
                 break;
             }}
-        for (i = 0; i < subExpression.length(); i++){
-            if (subExpression.charAt(i) =='('){
-                str.append("(" + subExpression.substring(0,i+1));
-                subExpression.delete(0,i+1);
-                workOnExpression(subExpression);
 
-                break;
-            }
-
-        }
         for (i = 0; i < subExpression.length(); i++){
-            if (subExpression.charAt(i) ==')'){
-                subToSend.append(subExpression.substring(0,i));
-                workOnExpression(subToSend);
-                subExpression.replace(0,i+1,String.valueOf(subToSend));
-                str.append(subExpression);
-                break;
+            if (subExpression.charAt(i) == '('){bracketsCounter++;}
+            if (subExpression.charAt(i) == ')'){
+                bracketsCounter--;
+                if (bracketsCounter == 0){
+                    subToSend.append(subExpression.substring(0,i));
+                    subExpression.delete(0, i+1);
+                    workOnExpression(subToSend);
+                    break;
+                }
+
             }
         }
+
+        str.append(subToSend);
+        str.append(subExpression);
+        workOnExpression(str);
     }
 
     private void countPower(StringBuilder str){
@@ -180,7 +223,7 @@ public class CalcStringExpV2 {
             return false;
         }
         for (int i = 0; i < str.length(); i++) {
-            if (operators.contains(str.charAt(i) + "") || nums.contains(str.charAt(i) + "")) {
+            if (operators.contains(str.charAt(i) + "") ||"0.123456789 ()".contains(str.charAt(i) + "")) {
                 //проверяем все ли символы цифры и знаки
             } else {
                 return false;
