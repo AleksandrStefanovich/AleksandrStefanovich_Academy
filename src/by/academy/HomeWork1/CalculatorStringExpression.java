@@ -31,24 +31,25 @@ public class CalculatorStringExpression {
         while (builder.toString().contains("*")){ findAndCountMult(); }
         while (builder.toString().contains("/")){ findAndCountDiv(); }
         while (builder.toString().contains("-")){
-            if (builder.charAt(0)=='-'&& builder.toString().contains("+")){   //проверяем если выражение
-             builder.deleteCharAt(0);                                         //начинается с отрицательного числа
-             int plusCounter = builder.indexOf("+");                          //и инверсируем знаки при необходимости
-             builder.replace(plusCounter,plusCounter+1,"-");
-             reverseCheck=1;
+//            if (builder.charAt(0)=='-'&& builder.toString().contains("+")){   //проверяем если выражение
+//             builder.deleteCharAt(0);                                         //начинается с отрицательного числа
+//             int plusCounter = builder.indexOf("+");                          //и инверсируем знаки при необходимости
+//             builder.replace(plusCounter,plusCounter+1,"-");
+//             reverseCheck=1;
+//            }
+//            else if (builder.charAt(0)=='-'&& builder.lastIndexOf("-")!= 0){
+//                builder.deleteCharAt(0);
+//                int minusCounter = builder.indexOf("-");
+//                builder.replace(minusCounter,minusCounter+1,"+");
+//                reverseCheck=1;
+//                findAndCountPlus(); break;
+//            }
+//            else if (builder.charAt(0)=='-'){
+//                System.out.println(builder);
+//                return Double.parseDouble(String.valueOf(builder));
+//            }
+//            else findAndCountMinus();
             }
-            else if (builder.charAt(0)=='-'&& builder.lastIndexOf("-")!= 0){
-                builder.deleteCharAt(0);
-                int minusCounter = builder.indexOf("-");
-                builder.replace(minusCounter,minusCounter+1,"+");
-                reverseCheck=1;
-                findAndCountPlus(); break;
-            }
-            else if (builder.charAt(0)=='-'){
-                System.out.println(builder);
-                return Double.parseDouble(String.valueOf(builder));
-            }
-            else findAndCountMinus(); }
         while (builder.toString().contains("+")){ findAndCountPlus(); }
 
         System.out.println(builder);
