@@ -1,6 +1,6 @@
 package by.academy.HomeWork3;
 
-public class Wheel extends Car{
+public class Wheel {
     private double pressure;
 
     public double getPressure() {

@@ -1,6 +1,6 @@
 package by.academy.HomeWork3;
 
-public class Engine extends Car{
+public class Engine {
     private boolean working;
     private double fuelConsumption;
 

@@ -1,6 +1,6 @@
 package by.academy.HomeWork3;
 
-public class Tank extends Car{
+public class Tank {
     private boolean empty;
     private double capacity;
     private double fuelAmount;

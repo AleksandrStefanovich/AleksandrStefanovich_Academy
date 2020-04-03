@@ -1,6 +1,6 @@
 package by.academy.HomeWork3;
 
-public class Door extends Car{
+public class Door {
     private boolean opened;
 
     public void open(Lock lock){}

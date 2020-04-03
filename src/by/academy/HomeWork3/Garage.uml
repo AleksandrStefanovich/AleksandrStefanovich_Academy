@@ -3,61 +3,99 @@
   <ID>JAVA</ID>
   <OriginalElement />
   <nodes>
-    <node x="154.49999999999997" y="399.0">by.academy.HomeWork3.Tank</node>
-    <node x="325.5" y="410.5">by.academy.HomeWork3.Engine</node>
-    <node x="249.0" y="752.0">by.academy.HomeWork3.IKey</node>
-    <node x="0.0" y="589.0">by.academy.HomeWork3.Lock</node>
-    <node x="509.5" y="444.0">by.academy.HomeWork3.Wheel</node>
-    <node x="0.0" y="752.0">by.academy.HomeWork3.Garage</node>
-    <node x="266.75" y="0.0">by.academy.HomeWork3.ICar</node>
-    <node x="241.75" y="122.0">by.academy.HomeWork3.Car</node>
-    <node x="1.5" y="421.5">by.academy.HomeWork3.Door</node>
-    <node x="218.0" y="828.0">by.academy.HomeWork3.Key</node>
-    <node x="669.5" y="0.0">by.academy.HomeWork3.Human</node>
+    <node x="469.0833333333333" y="244.0">by.academy.HomeWork3.Tank</node>
+    <node x="640.0833333333333" y="255.5">by.academy.HomeWork3.Engine</node>
+    <node x="578.2916666666667" y="0.0">by.academy.HomeWork3.IKey</node>
+    <node x="314.5833333333333" y="76.0">by.academy.HomeWork3.Lock</node>
+    <node x="10.5" y="518.0">by.academy.HomeWork3.Garage</node>
+    <node x="181.08333333333331" y="289.0">by.academy.HomeWork3.Wheel</node>
+    <node x="45.0" y="278.0">by.academy.HomeWork3.ICar</node>
+    <node x="305.5833333333333" y="474.0">by.academy.HomeWork3.Car</node>
+    <node x="316.0833333333333" y="266.5">by.academy.HomeWork3.Door</node>
+    <node x="54.37222222222226" y="751.0">by.academy.HomeWork3.Human</node>
+    <node x="547.2916666666667" y="110.0">by.academy.HomeWork3.Key</node>
   </nodes>
   <notes />
   <edges>
-    <edge source="by.academy.HomeWork3.Engine" target="by.academy.HomeWork3.Car">
-      <point x="0.0" y="-58.5" />
-      <point x="407.5" y="379.0" />
-      <point x="338.0" y="379.0" />
-      <point x="19.25" y="113.5" />
+    <edge source="by.academy.HomeWork3.Human" target="by.academy.HomeWork3.IKey">
+      <point x="48.66666666666663" y="-124.5" />
+      <point x="176.0388888888889" y="726.0" />
+      <point x="814.5833333333333" y="726.0" />
+      <point x="814.5833333333333" y="51.0" />
+      <point x="639.9583333333334" y="51.0" />
+      <point x="24.66666666666663" y="13.0" />
     </edge>
-    <edge source="by.academy.HomeWork3.Lock" target="by.academy.HomeWork3.Door">
-      <point x="0.0" y="-59.0" />
-      <point x="0.0" y="47.5" />
+    <edge source="by.academy.HomeWork3.Garage" target="by.academy.HomeWork3.ICar">
+      <point x="43.25" y="-69.5" />
+      <point x="140.25" y="454.0" />
+      <point x="110.0" y="454.0" />
+      <point x="13.0" y="36.0" />
     </edge>
-    <edge source="by.academy.HomeWork3.Wheel" target="by.academy.HomeWork3.Car">
-      <point x="0.0" y="-25.0" />
-      <point x="567.0" y="369.0" />
-      <point x="376.5" y="369.0" />
-      <point x="57.75" y="113.5" />
+    <edge source="by.academy.HomeWork3.Car" target="by.academy.HomeWork3.Tank">
+      <point x="28.0" y="-113.5" />
+      <point x="410.5833333333333" y="424.0" />
+      <point x="506.8333333333333" y="424.0" />
+      <point x="-37.75" y="70.0" />
     </edge>
     <edge source="by.academy.HomeWork3.Key" target="by.academy.HomeWork3.IKey">
       <point x="0.0" y="-25.0" />
       <point x="0.0" y="13.0" />
     </edge>
-    <edge source="by.academy.HomeWork3.Tank" target="by.academy.HomeWork3.Car">
-      <point x="2.8421709430404007E-14" y="-70.0" />
-      <point x="230.0" y="379.0" />
-      <point x="299.5" y="379.0" />
-      <point x="-19.25" y="113.5" />
+    <edge source="by.academy.HomeWork3.Human" target="by.academy.HomeWork3.Garage">
+      <point x="0.0" y="-124.5" />
+      <point x="127.37222222222226" y="726.0" />
+      <point x="97.0" y="726.0" />
+      <point x="0.0" y="69.5" />
+    </edge>
+    <edge source="by.academy.HomeWork3.Car" target="by.academy.HomeWork3.Door">
+      <point x="14.0" y="-113.5" />
+      <point x="396.5833333333333" y="414.0" />
+      <point x="426.9166666666667" y="414.0" />
+      <point x="44.33333333333337" y="47.5" />
+    </edge>
+    <edge source="by.academy.HomeWork3.Car" target="by.academy.HomeWork3.Wheel">
+      <point x="-42.0" y="-113.5" />
+      <point x="340.5833333333333" y="424.0" />
+      <point x="238.58333333333331" y="424.0" />
+      <point x="0.0" y="25.0" />
     </edge>
     <edge source="by.academy.HomeWork3.Car" target="by.academy.HomeWork3.ICar">
-      <point x="0.0" y="-113.5" />
-      <point x="0.0" y="36.0" />
+      <point x="-70.0" y="-113.5" />
+      <point x="312.5833333333333" y="444.0" />
+      <point x="136.0" y="444.0" />
+      <point x="39.0" y="36.0" />
     </edge>
-    <edge source="by.academy.HomeWork3.Door" target="by.academy.HomeWork3.Car">
-      <point x="0.0" y="-47.5" />
-      <point x="68.0" y="369.0" />
-      <point x="261.0" y="369.0" />
-      <point x="-57.75" y="113.5" />
+    <edge source="by.academy.HomeWork3.Lock" target="by.academy.HomeWork3.Door">
+      <point x="34.0" y="59.0" />
+      <point x="33.25" y="-47.5" />
+    </edge>
+    <edge source="by.academy.HomeWork3.Human" target="by.academy.HomeWork3.ICar">
+      <point x="-48.66666666666663" y="-124.5" />
+      <point x="78.70555555555563" y="726.0" />
+      <point x="0.0" y="726.0" />
+      <point x="0.0" y="444.0" />
+      <point x="58.0" y="444.0" />
+      <point x="-39.0" y="36.0" />
+    </edge>
+    <edge source="by.academy.HomeWork3.Car" target="by.academy.HomeWork3.Engine">
+      <point x="70.0" y="-113.5" />
+      <point x="452.5833333333333" y="454.0" />
+      <point x="763.0833333333333" y="454.0" />
+      <point x="41.0" y="58.5" />
+    </edge>
+    <edge source="by.academy.HomeWork3.Door" target="by.academy.HomeWork3.Lock">
+      <point x="-33.25" y="-47.5" />
+      <point x="-34.0" y="59.0" />
+    </edge>
+    <edge source="by.academy.HomeWork3.Lock" target="by.academy.HomeWork3.IKey">
+      <point x="0.0" y="-59.0" />
+      <point x="382.5833333333333" y="51.0" />
+      <point x="590.6250000000001" y="51.0" />
+      <point x="-24.66666666666663" y="13.0" />
     </edge>
   </edges>
-  <settings layout="Hierarchic Group" zoom="0.8" x="488.97943722943756" y="493.8207070707071" />
-  <SelectedNodes>
-    <node>by.academy.HomeWork3.Car</node>
-  </SelectedNodes>
+  <settings layout="Hierarchic Group" zoom="0.9686274509803922" x="430.53646977821643" y="400.7309278985283" />
+  <SelectedNodes />
   <Categories>
     <Category>Fields</Category>
     <Category>Constructors</Category>
