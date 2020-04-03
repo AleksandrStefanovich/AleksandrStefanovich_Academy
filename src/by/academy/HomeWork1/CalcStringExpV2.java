@@ -51,7 +51,7 @@ public class CalcStringExpV2 {
                     if (str.charAt(j) == '-' || str.charAt(j) == '+') {
                         result -= Double.parseDouble(str.substring(i+1, j+1));
                         break;
-                    } else if(j == str.length()-1){ String debug = str.substring(i+1, j+1);
+                    } else if(j == str.length()-1){
                         result -= Double.parseDouble(str.substring(i+1, j+1));}
                 }
             }
@@ -60,8 +60,8 @@ public class CalcStringExpV2 {
             if (str.charAt(i) == '+') {
                 for (j = i + 1; j < str.length(); j++) {
                     if (str.charAt(j) == '-' || str.charAt(j) == '+') {
-                        String debug = str.substring(i+1, j+1);
-                        result += Double.parseDouble(str.substring(i+1, j+1));
+                        String debug = str.substring(i+1, j);
+                        result += Double.parseDouble(str.substring(i+1, j));
                         break;
                     } else if(j == str.length()-1){ result += Double.parseDouble(str.substring(i+1, j+1));}
                 }
@@ -96,6 +96,7 @@ public class CalcStringExpV2 {
                 if (bracketsCounter == 0){
                     subToSend.append(subExpression.substring(0,i));
                     subExpression.delete(0, i+1);
+                    workOnExpression(subToSend);
                     subToSend.replace(0 , subToSend.length(),  String.valueOf(workOnExpression(subToSend)));
                     break;
                 }
