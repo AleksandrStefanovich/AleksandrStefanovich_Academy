@@ -24,7 +24,7 @@ public class Main2 {
 
 
         CalcStringExpV2 calcul = new CalcStringExpV2();
-        System.out.println(calcul.calculateExpression("1+(2-(3+(4*2)))"));
+        System.out.println(calcul.calculateExpression("4.1 + 15 * 7 + (28 / 5)^2"));//1+(2-(3+(2-4)))
 
 
     }

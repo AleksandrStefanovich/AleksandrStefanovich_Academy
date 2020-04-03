@@ -49,9 +49,10 @@ public class CalcStringExpV2 {
             if (str.charAt(i) == '-') {
                 for (j = i + 1; j < str.length(); j++) {
                     if (str.charAt(j) == '-' || str.charAt(j) == '+') {
-                        result -= Double.parseDouble(str.substring(i+1, j));
+                        result -= Double.parseDouble(str.substring(i+1, j+1));
                         break;
-                    } else if(j == str.length()-1){ result -= Double.parseDouble(str.substring(i+1, j));}
+                    } else if(j == str.length()-1){ String debug = str.substring(i+1, j+1);
+                        result -= Double.parseDouble(str.substring(i+1, j+1));}
                 }
             }
         }
@@ -59,9 +60,10 @@ public class CalcStringExpV2 {
             if (str.charAt(i) == '+') {
                 for (j = i + 1; j < str.length(); j++) {
                     if (str.charAt(j) == '-' || str.charAt(j) == '+') {
-                        result += Double.parseDouble(str.substring(i+1, j));
+                        String debug = str.substring(i+1, j+1);
+                        result += Double.parseDouble(str.substring(i+1, j+1));
                         break;
-                    } else if(j == str.length()-1){ result += Double.parseDouble(str.substring(i+1, j));}
+                    } else if(j == str.length()-1){ result += Double.parseDouble(str.substring(i+1, j+1));}
                 }
             }
         }
@@ -94,11 +96,19 @@ public class CalcStringExpV2 {
                 if (bracketsCounter == 0){
                     subToSend.append(subExpression.substring(0,i));
                     subExpression.delete(0, i+1);
-                    workOnExpression(subToSend);
+                    subToSend.replace(0 , subToSend.length(),  String.valueOf(workOnExpression(subToSend)));
                     break;
                 }
 
             }
+        }
+        if (str.charAt(str.length()-1) == '+' && subToSend.charAt(0) == '-'){
+            str.delete(str.length()-1,str.length());
+        }
+        if (str.charAt(str.length()-1)=='-'&&subToSend.charAt(0)=='-'){
+            str.delete(str.length()-2,str.length()-1);
+            str.append("+");
+            subToSend.deleteCharAt(0);
         }
 
         str.append(subToSend);
@@ -164,8 +174,9 @@ public class CalcStringExpV2 {
         }
         for (int i = 0; i < str2.length();i++){
             if  (operators.contains(str2.charAt(i)+"")){
-                b = a + i + counter+1; break;
-            }else{b = a + str2.length() + counter;}
+                b = a + i + counter; break;
+            }else{if (a==0){b = 1 + str2.length() + counter;}else
+                b = a + str2.length() + counter;}
         }
         String str3 = str.substring(a,b);
         str.replace(a,b,countOperation(str.substring(a,b)));
