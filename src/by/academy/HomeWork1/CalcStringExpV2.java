@@ -41,7 +41,7 @@ public class CalcStringExpV2 {
                         break;
                     }
                     if (i == str.length() - 1) {
-                        return Double.parseDouble(str.substring(0, i));
+                        return Double.parseDouble(str.substring(0, i+1));
                     }
                 }
             }
