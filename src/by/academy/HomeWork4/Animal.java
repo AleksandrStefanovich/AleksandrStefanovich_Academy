@@ -8,4 +8,16 @@ public class Animal {
         this.age = age;
         this.nick = nick;
     }
+
+    public int getAge() {
+        return age;
+    }
+
+    public String getNick() {
+        return nick;
+    }
+
+    public String getData(){
+        return nick + age;
+    }
 }

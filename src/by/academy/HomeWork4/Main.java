@@ -16,11 +16,13 @@ public class Main {
         String alphabet = "ABCDEFGHIJKLMNOPPQRSTUVWXYZ";
         String alphabetWithNumbers = "ABCDEFGHIJKLMNOPPQRSTUVWXYZ0123456789";
 
-        DataContainer<Person> personContainer= new DataContainer<>(new Person[0]);
+        DataContainer<Person> personContainer = new DataContainer<>(new Person[0]);
 
-        for (int i = 0; i < 100000; i++) {
-            String nick = alphabet.charAt((int)Math.random()*27) + alphabet.charAt((int)Math.random()*27) + alphabet.charAt((int)Math.random()*27)+ alphabet.charAt((int)Math.random()*27)+"";
-            String password = "" + alphabetWithNumbers.charAt((int)Math.random()*37)+ alphabetWithNumbers.charAt((int)Math.random()*37)+ alphabetWithNumbers.charAt((int)Math.random()*37)+ alphabetWithNumbers.charAt((int)Math.random()*37);
+        for (int i = 0; i < 100; i++) {
+            String nick = alphabet.charAt((int)Math.random()*27) + alphabet.charAt((int)Math.random()*27) + alphabet.charAt((int)Math.random()*27)
+                    + alphabet.charAt((int)Math.random()*27)+"";
+            String password = "" + alphabetWithNumbers.charAt((int)Math.random()*37)+ alphabetWithNumbers.charAt((int)Math.random()*37)
+                    + alphabetWithNumbers.charAt((int)Math.random()*37)+ alphabetWithNumbers.charAt((int)Math.random()*37);
             randomDay = minDay + random.nextInt(maxDay - minDay);
             LocalDate randomDate = LocalDate.ofEpochDay(randomDay);
             personContainer.add(new Person(nick,password,randomDate));
@@ -29,12 +31,14 @@ public class Main {
 
         DataContainer<Animal> animalContainer= new DataContainer<>(new Animal[0]);
 
-        for (int i = 0; i < 100000; i++) {
-            String nick = alphabet.charAt((int)Math.random()*27) + alphabet.charAt((int)Math.random()*27) + alphabet.charAt((int)Math.random()*27)+ alphabet.charAt((int)Math.random()*27)+"";
+        for (int i = 0; i < 100; i++) {
+            String nick = alphabet.charAt((int)Math.random()*27) + alphabet.charAt((int)Math.random()*27) + alphabet.charAt((int)Math.random()*27)
+                    + alphabet.charAt((int)Math.random()*27)+"";
             int age = (int)Math.random()*16;
             animalContainer.add(new Animal(age, nick));
 
         }
+
 
 
     }

@@ -13,4 +13,16 @@ public class Person {
         this.password = password;
         this.registration = registration;
     }
+
+    public String getNick() {
+        return nick;
+    }
+
+    public LocalDate getRegistration() {
+        return registration;
+    }
+
+    public String getData(){
+        return nick + registration;
+    }
 }
