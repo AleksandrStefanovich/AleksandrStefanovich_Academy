@@ -1,14 +1,12 @@
 package by.academy.HomeWork4;
 
-import java.lang.reflect.Array;
-import java.util.ArrayList;
 import java.util.Arrays;
 
 public class DataContainer<E> {
 
    private E[] item;
 
-    public DataContainer(E[] item){
+   public DataContainer(E[] item){
         this.item = item;
     }
 
