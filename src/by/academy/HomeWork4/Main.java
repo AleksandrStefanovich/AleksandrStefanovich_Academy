@@ -14,7 +14,6 @@ public class Main {
             LocalDate date = rnd.getDate();
             personContainer.add(new Person(nick,password,date));
         }
-        System.out.println(personContainer.getData());
 
         DataContainer<Animal> animalContainer= new DataContainer<>(new Animal[0]);
 
@@ -24,6 +23,12 @@ public class Main {
             animalContainer.add(new Animal(age, nick));
 
         }
+
+        AnimalAgeComparator animComp = new AnimalAgeComparator();
+        DataContainer.sort(animalContainer, animComp);
+
+        PersonRegistrationComparator persComp = new PersonRegistrationComparator();
+        DataContainer.sort(personContainer, persComp);
 
 
 
