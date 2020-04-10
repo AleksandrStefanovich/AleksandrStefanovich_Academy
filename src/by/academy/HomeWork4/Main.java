@@ -8,7 +8,7 @@ public class Main {
         Randomizer rnd = new Randomizer(); //свой рандомер для имён, паролей и дат
         DataContainer<Person> personContainer = new DataContainer<>(new Person[0]);
 
-        for (int i = 0; i < 100; i++) {
+        for (int i = 0; i < 5; i++) {
             String nick = rnd.getName();
             String password = rnd.getPassword();
             LocalDate date = rnd.getDate();
@@ -17,11 +17,10 @@ public class Main {
 
         DataContainer<Animal> animalContainer= new DataContainer<>(new Animal[0]);
 
-        for (int i = 0; i < 100; i++) {
+        for (int i = 0; i < 5; i++) {
             String nick = rnd.getName();
-            int age = (int)Math.random()*16;
+            int age = (int)(Math.random()*16);
             animalContainer.add(new Animal(age, nick));
-
         }
 
         AnimalAgeComparator animComp = new AnimalAgeComparator();

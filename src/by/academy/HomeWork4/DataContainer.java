@@ -11,6 +11,10 @@ public class DataContainer<E> {
         this.item = item;
     }
 
+   public E[] getData(){
+        return item;
+   }
+
 
    public void add(E item) {
        this.item = Arrays.copyOf(this.item, this.item.length + 1);
@@ -19,8 +23,8 @@ public class DataContainer<E> {
 
    public static void sort(DataContainer<Person> item, PersonRegistrationComparator comp){
        Person tempContainer;
-       int personMaxDateIndex = 0;
-       int personMinDateIndex = 0;
+       int personMaxDateIndex = 0;   //обе сортировки вместо перестановки объектов местами
+       int personMinDateIndex = 0;   //обменивают ссылки на объекты
        Person personMaxDate;
        Person personMinDate;
        boolean maxChange = false;
@@ -28,9 +32,9 @@ public class DataContainer<E> {
 
        for (int counter = 0; counter < item.getData().length/2; counter++) {
 
-           personMaxDate = item.getData()[counter];
-           personMinDate = item.getData()[counter];
-
+           personMaxDate = item.getData()[counter];  //каждую итерацию находятся мин и макс
+           personMinDate = item.getData()[counter];  //и обмениваются ссылками с крайними элементами
+                                                     //продвигаясь от краёв массива к центру
            for (int i = counter; i < item.getData().length-counter; i++) {
                if (comp.compare(personMaxDate, item.getData()[i]) == 1) {
                    personMaxDate = item.getData()[i];
@@ -43,7 +47,7 @@ public class DataContainer<E> {
                    minChange = true;
                }
            }
-           if (minChange) {
+           if (minChange) {   //проверка на случай если элемент на своём месте
            tempContainer = item.getData()[counter];
            item.setData(personMinDate, counter);
            item.setData(tempContainer, personMinDateIndex);
@@ -59,7 +63,7 @@ public class DataContainer<E> {
 
    }
 
-
+    //метод фактически дублирует метод sort() для Person
    public static void sort(DataContainer<Animal> item , AnimalAgeComparator comp){
        Animal tempContainer;
        int animalMaxAgeIndex = 0;
@@ -99,10 +103,6 @@ public class DataContainer<E> {
            minChange = false;
            maxChange = false;
        }
-   }
-
-   public E[] getData(){
-        return item;
    }
 
    private void setData(E item,int index){
