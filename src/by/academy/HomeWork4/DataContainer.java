@@ -22,6 +22,32 @@ public class DataContainer<E> {
        this.item[this.item.length - 1] = item;
    }
 
+   public void delete(int index){
+       if (index > 0 && index < this.item.length) {
+           for (int i = index; i < this.item.length - 1; i++) {
+               this.item[i] = this.item[i + 1];
+           }
+           this.item = Arrays.copyOf(this.item, this.item.length - 1);
+       } else {
+           System.out.println("Index is out of array's bounds");
+       }
+   }
+
+   public void delete(E item){
+       boolean deleted = false;
+       for (int i = 0; i < this.item.length; i++) {
+           if (this.item[i].equals(item)){
+               this.delete(i);
+               deleted = true;
+               break;
+           }
+       }
+       if (!deleted){
+           System.out.println("No element to delete found");
+       }
+
+   }
+
    public static <E> void sort(DataContainer<E> item , Comparator<E> comp){
        E tempContainer;
        int containerMaxValueIndex = 0;   //сортировка вместо перестановки объектов местами
