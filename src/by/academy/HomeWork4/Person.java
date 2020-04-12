@@ -33,6 +33,14 @@ public class Person {
     }
 
     @Override
+    public String toString() {
+        return "Person{" +
+                "nick='" + nick + '\'' +
+                ", registration=" + registration +
+                '}';
+    }
+
+    @Override
     public int hashCode() {
         return Objects.hash(nick, password, registration);
     }

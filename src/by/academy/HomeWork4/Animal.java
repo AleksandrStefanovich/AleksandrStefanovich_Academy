@@ -29,6 +29,14 @@ public class Animal {
     }
 
     @Override
+    public String toString() {
+        return "Animal{" +
+                "age=" + age +
+                ", nick='" + nick + '\'' +
+                '}';
+    }
+
+    @Override
     public int hashCode() {
         return Objects.hash(age, nick);
     }
