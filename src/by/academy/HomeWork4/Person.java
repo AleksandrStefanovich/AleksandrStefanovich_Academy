@@ -1,6 +1,7 @@
 package by.academy.HomeWork4;
 
 import java.time.LocalDate;
+import java.util.Objects;
 
 public class Person {
     private String nick;
@@ -23,5 +24,20 @@ public class Person {
 
     public String getData(){
         return nick + registration;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Person person = (Person) o;
+        return Objects.equals(nick, person.nick) &&
+                Objects.equals(password, person.password) &&
+                Objects.equals(registration, person.registration);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(nick, password, registration);
     }
 }

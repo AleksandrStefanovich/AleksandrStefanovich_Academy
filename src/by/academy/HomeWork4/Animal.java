@@ -1,5 +1,7 @@
 package by.academy.HomeWork4;
 
+import java.util.Objects;
+
 public class Animal {
     private int age;
     private String nick;
@@ -19,5 +21,19 @@ public class Animal {
 
     public String getData(){
         return nick + age;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Animal animal = (Animal) o;
+        return age == animal.age &&
+                Objects.equals(nick, animal.nick);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(age, nick);
     }
 }
