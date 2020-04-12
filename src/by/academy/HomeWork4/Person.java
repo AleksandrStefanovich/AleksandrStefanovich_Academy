@@ -22,10 +22,6 @@ public class Person {
         return registration;
     }
 
-    public String getData(){
-        return nick + registration;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
