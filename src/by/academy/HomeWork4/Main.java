@@ -1,7 +1,6 @@
 package by.academy.HomeWork4;
 
 import java.time.LocalDate;
-import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
@@ -26,15 +25,13 @@ public class Main {
 
         AnimalAgeComparator animComp = new AnimalAgeComparator();
         DataContainer.sort(animalContainer, animComp);
-        animalContainer.delete(265);
-        animalContainer.delete(animalContainer.getData()[14]);
+        animalContainer.delete(42);
+        animalContainer.delete(animalContainer.getData()[89991]);
 
         PersonRegistrationComparator persComp = new PersonRegistrationComparator();
         DataContainer.sort(personContainer, persComp);
         personContainer.delete(200000);
-        personContainer.delete(personContainer.getData()[687]);
-
-
+        personContainer.delete(personContainer.getData()[451]);
 
     }
 }

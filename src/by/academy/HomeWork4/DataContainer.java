@@ -23,7 +23,7 @@ public class DataContainer<E> {
    }
 
    public void delete(int index){
-       if (index > 0 && index < this.item.length) {
+       if (index >= 0 && index < this.item.length) {
            for (int i = index; i < this.item.length - 1; i++) {
                this.item[i] = this.item[i + 1];
            }
