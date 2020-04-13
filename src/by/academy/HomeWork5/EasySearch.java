@@ -3,7 +3,7 @@ package by.academy.HomeWork5;
 public class EasySearch implements ISearchEngine {
     @Override
     public int search(String str, String wordToSearch) {
-        String symbols = " ,\".-!?:;\'()";
+        String symbols = " ,\".-!?:;\'()\n";
         int counter = 0;
         int index;
         str = str.toLowerCase();
