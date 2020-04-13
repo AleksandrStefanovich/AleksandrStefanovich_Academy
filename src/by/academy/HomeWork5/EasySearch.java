@@ -18,8 +18,10 @@ public class EasySearch implements ISearchEngine {
                     symbols.contains(str.charAt(index + wordToSearch.length()) + "")) {
                 counter++;
             }
+            if(wordToSearch == "и"&& str.charAt(index + wordToSearch.length()) == 'и'){
+                str = str.substring(index + wordToSearch.length() + 1);
+            } else {str = str.substring(index + wordToSearch.length());}
 
-            str = str.substring(index + wordToSearch.length());
         }
 
 
