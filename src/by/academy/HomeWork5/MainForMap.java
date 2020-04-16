@@ -13,7 +13,7 @@ public class MainForMap {
 
         System.out.println(search.search( readAllBytesJava7(filePath),"мир"));
         System.out.println(search.getNumberOfWords());
-        
+
 
         search.sort();
         System.out.println(search.getSortedWords());

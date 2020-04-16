@@ -11,7 +11,7 @@ public class Main {
 
         System.out.println( readAllBytesJava7( filePath ) );
 
-        EasySearch eSearch = new EasySearch();
+        EasySearchV2 eSearch = new EasySearchV2(); // для запуска первой версии убрать V2 из EasySearch
 
         System.out.println(eSearch.search(readAllBytesJava7( filePath ),"война"));
         System.out.println(eSearch.search(readAllBytesJava7( filePath ),"и"));
