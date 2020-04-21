@@ -7,10 +7,12 @@ import java.nio.file.Paths;
 public class MainForMap {
     public static void main(String[] args) {
 
-        String filePath = "C:/Users/Alexander/IdeaProjects/AleksandrStefanovich_Academy/src/by/academy/HomeWork5/Война и мир.txt";
+        String filePath = "C:\\Users\\Pathos3\\IdeaProjects\\AleksandrStefanovich_Academy\\src\\by\\academy\\HomeWork5\\Война и мир.txt";
 
         EasySearchWithMap search = new EasySearchWithMap(readAllBytesJava7(filePath));
 
+        System.out.println(search.search( readAllBytesJava7(filePath),"война"));
+        System.out.println(search.search( readAllBytesJava7(filePath),"и"));
         System.out.println(search.search( readAllBytesJava7(filePath),"мир"));
         System.out.println(search.getNumberOfWords());
 

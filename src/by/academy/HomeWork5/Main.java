@@ -7,9 +7,9 @@ import java.nio.file.*;
 public class Main {
     public static void main(String[] args) {
 
-        String filePath = "C:/Users/Alexander/IdeaProjects/AleksandrStefanovich_Academy/src/by/academy/HomeWork5/Война и мир.txt";
+        String filePath = "C:\\Users\\Pathos3\\IdeaProjects\\AleksandrStefanovich_Academy\\src\\by\\academy\\HomeWork5\\Война и мир.txt";
 
-        System.out.println( readAllBytesJava7( filePath ) );
+        //System.out.println( readAllBytesJava7( filePath ) );
 
         EasySearchV2 eSearch = new EasySearchV2(); // для запуска первой версии убрать V2 из EasySearch
 
