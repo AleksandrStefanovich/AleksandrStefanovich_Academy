@@ -33,10 +33,11 @@ public class Person implements Serializable {
                 Objects.equals(registration, person.registration);
     }
 
+
     @Override
     public String toString() {
         return "Person{" +
-                "nick='" + nick + '\'' +
+                "nick='" + nick +
                 ", registration=" + registration +
                 '}';
     }
