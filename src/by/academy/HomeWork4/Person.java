@@ -1,9 +1,10 @@
 package by.academy.HomeWork4;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.Objects;
 
-public class Person {
+public class Person implements Serializable {
     private String nick;
     private String password;
     private LocalDate registration;

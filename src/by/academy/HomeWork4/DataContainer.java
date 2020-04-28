@@ -1,10 +1,11 @@
 package by.academy.HomeWork4;
 
 
+import java.io.Serializable;
 import java.util.Arrays;
 import java.util.Comparator;
 
-public class DataContainer<E> {
+public class DataContainer<E> implements Serializable {
 
    private E[] item;
 
