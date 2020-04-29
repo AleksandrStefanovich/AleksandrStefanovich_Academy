@@ -1,4 +1,4 @@
-package by.academy.HomeWork6;
+package by.academy.HomeWork7;
 
 import by.academy.HomeWork4.*;
 
