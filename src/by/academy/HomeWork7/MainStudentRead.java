@@ -28,10 +28,10 @@ public class MainStudentRead {
 
        // BufferedWriter out = new BufferedWriter(new FileWriter("sortedStudents.txt"));
 
-        ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("sortedStudents.txt"));
+       // ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("sortedStudents.txt")); //работает как в комментах
+        DataOutputStream out = new DataOutputStream(new FileOutputStream("sortedStudents.txt")); //просто работает:)
         for (int i = 0; i < student.size(); i++) {
             //out.append(student.get(i).toString()+"\n");
-
             //out.writeChars(student.get(i).toString()+"\n"); //записывает все символы через пробел
             //out.writeUTF(student.get(i).toString()+"\n"); //записывает одно из NUL+"+-,.\" перед каждым Person + как в writeBytes
             out.writeBytes(student.get(i).toString()+"\n"); //записывает лишнее "z NUL NUL EOT NUL" в рандомных местах примерно через каждые 50-150 строк
