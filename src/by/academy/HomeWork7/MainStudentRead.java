@@ -30,7 +30,7 @@ public class MainStudentRead {
         for (int i = 0; i < student.size(); i++) {
            // out.append(student.get(i)+"\n");
             //out.writeChars(student.get(i)+"\n"); //записывает все символы через пробел
-            out.writeUTF(student.get(i).toString()); //записывает одно из NUL+"+-,.\" перед каждым Person + как в writeBytes
+            out.writeUTF(student.get(i).toString()+"\n"); //записывает одно из NUL+"+-,.\" перед каждым Person + как в writeBytes
           // out.writeBytes(student.get(i)+"\n"); //записывает лишнее "z NUL NUL EOT NUL" в рандомных местах примерно через каждые 50-150 строк
 //            if (i%10 == 0){
 //                out.flush();
