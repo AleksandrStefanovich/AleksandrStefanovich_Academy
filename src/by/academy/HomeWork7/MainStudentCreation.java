@@ -16,7 +16,7 @@ public class MainStudentCreation {
             student[i] = new Person(rnd.getName(), rnd.getPassword(), rnd.getDate());
         }
 
-        ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("students.txt"));
+        ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("students.bin"));
         out.writeObject(student);
         out.close();
     }

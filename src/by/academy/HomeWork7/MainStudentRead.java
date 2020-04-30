@@ -10,7 +10,7 @@ import java.util.List;
 
 public class MainStudentRead {
     public static void main(String[] args) throws IOException, ClassNotFoundException {
-        ObjectInputStream in = new ObjectInputStream(new FileInputStream("students.txt"));
+        ObjectInputStream in = new ObjectInputStream(new FileInputStream("students.bin"));
 
         List<Person> student = new ArrayList<Person>();
 
@@ -24,16 +24,18 @@ public class MainStudentRead {
                 else return -1;
             }
         });
-       // BufferedWriter out = new BufferedWriter(new FileWriter("sortedStudents.txt"));
-        ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("sortedStudents.txt")); //работает как в комментах
-        //DataOutputStream out = new DataOutputStream(new FileOutputStream("sortedStudents.txt")); //просто работает:)
+       //BufferedWriter out = new BufferedWriter(new FileWriter("sortedStudents.bin"));
+        ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("sortedStudents.bin")); //работает как в комментах
+        //DataOutputStream out = new DataOutputStream(new FileOutputStream("sortedStudents.bin")); //просто работает:)
         for (int i = 0; i < student.size(); i++) {
-            //out.append(student.get(i).toString()+"\n");
-            //out.writeChars(student.get(i).toString()+"\n"); //записывает все символы через пробел
-            //out.writeUTF(student.get(i).toString()+"\n"); //записывает одно из NUL+"+-,.\" перед каждым Person + как в writeBytes
-            out.writeBytes(student.get(i).toString()+"\n"); //записывает лишнее "z NUL NUL EOT NUL" в рандомных местах примерно через каждые 50-150 строк
+           // out.append(student.get(i)+"\n");
+            //out.writeChars(student.get(i)+"\n"); //записывает все символы через пробел
+            out.writeUTF(student.get(i).toString()); //записывает одно из NUL+"+-,.\" перед каждым Person + как в writeBytes
+          // out.writeBytes(student.get(i)+"\n"); //записывает лишнее "z NUL NUL EOT NUL" в рандомных местах примерно через каждые 50-150 строк
+//            if (i%10 == 0){
+//                out.flush();
+//            }
         }
-        out.flush();
         out.close();
     }
 }
