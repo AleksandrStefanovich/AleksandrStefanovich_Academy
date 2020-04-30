@@ -24,10 +24,7 @@ public class MainStudentRead {
                 else return -1;
             }
         });
-
-
        // BufferedWriter out = new BufferedWriter(new FileWriter("sortedStudents.txt"));
-
        // ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("sortedStudents.txt")); //работает как в комментах
         DataOutputStream out = new DataOutputStream(new FileOutputStream("sortedStudents.txt")); //просто работает:)
         for (int i = 0; i < student.size(); i++) {
@@ -38,11 +35,5 @@ public class MainStudentRead {
         }
         out.flush();
         out.close();
-
-
-
-
-
-
     }
 }
