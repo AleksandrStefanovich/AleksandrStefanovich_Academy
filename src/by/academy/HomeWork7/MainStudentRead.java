@@ -25,8 +25,8 @@ public class MainStudentRead {
             }
         });
        // BufferedWriter out = new BufferedWriter(new FileWriter("sortedStudents.txt"));
-       // ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("sortedStudents.txt")); //работает как в комментах
-        DataOutputStream out = new DataOutputStream(new FileOutputStream("sortedStudents.txt")); //просто работает:)
+        ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("sortedStudents.txt")); //работает как в комментах
+        //DataOutputStream out = new DataOutputStream(new FileOutputStream("sortedStudents.txt")); //просто работает:)
         for (int i = 0; i < student.size(); i++) {
             //out.append(student.get(i).toString()+"\n");
             //out.writeChars(student.get(i).toString()+"\n"); //записывает все символы через пробел
