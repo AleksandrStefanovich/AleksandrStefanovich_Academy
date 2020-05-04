@@ -9,13 +9,18 @@ import java.io.ObjectOutputStream;
 
 public class MainStudentCreation {
     public static void main(String[] args) throws IOException {
+        /*
+        * Создание 100000 студентов по имени, возрасту и ID
+        * */
         Randomizer rnd = new Randomizer();
-        Person[] student = new Person[100000];
+        Student[] student = new Student[100000];
 
         for (int i = 0; i < student.length; i++) {
-            student[i] = new Person(rnd.getName(), rnd.getPassword(), rnd.getDate());
+            student[i] = new Student(rnd.getName(), rnd.getAge(), (1+i));
         }
-
+        /*
+        * Запись массива в файл
+        * */
         ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("students.bin"));
         out.writeObject(student);
         out.close();

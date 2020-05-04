@@ -5,6 +5,11 @@ import java.util.Random;
 
 public class Randomizer {
 
+    public int getAge(){
+        return (int) (18 + Math.random()*80);
+    }
+
+
     public String getName(){
         String name;
         name = names[(int)(Math.random()*names.length)];

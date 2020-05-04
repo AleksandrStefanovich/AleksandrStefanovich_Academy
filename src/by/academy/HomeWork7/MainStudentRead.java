@@ -9,33 +9,58 @@ import java.util.Comparator;
 import java.util.List;
 
 public class MainStudentRead {
+
     public static void main(String[] args) throws IOException, ClassNotFoundException {
+        /*
+        * Чтение массива студентов из файла в Лист
+        * */
+
         ObjectInputStream in = new ObjectInputStream(new FileInputStream("students.bin"));
+        List<Student> student = new ArrayList<Student>();
+        student = Arrays.asList((Student[])in.readObject());
 
-        List<Person> student = new ArrayList<Person>();
+        /*
+        * Сортировка студентов по имени
+        * */
 
-        student = Arrays.asList((Person[])in.readObject());
-
-        student.sort(new Comparator<Person>() {
+        student.sort(new Comparator<Student>() {
             @Override
-            public int compare(Person o1, Person o2) {
-                if (o1.getNick().charAt(0) == o2.getNick().charAt(0)) return 0;
-                else if (o1.getNick().charAt(0) > o2.getNick().charAt(0)) return 1;
-                else return -1;
+            public int compare(Student o1, Student o2) {
+                return (o1.getName().compareTo(o2.getName()));
             }
         });
-       //BufferedWriter out = new BufferedWriter(new FileWriter("sortedStudents.bin"));
-        ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("sortedStudents.bin")); //работает как в комментах
-        //DataOutputStream out = new DataOutputStream(new FileOutputStream("sortedStudents.bin")); //просто работает:)
-        for (int i = 0; i < student.size(); i++) {
-           // out.append(student.get(i)+"\n");
-            //out.writeChars(student.get(i)+"\n"); //записывает все символы через пробел
-            out.writeUTF(student.get(i).toString()+"\n"); //записывает одно из NUL+"+-,.\" перед каждым Person + как в writeBytes
-          // out.writeBytes(student.get(i)+"\n"); //записывает лишнее "z NUL NUL EOT NUL" в рандомных местах примерно через каждые 50-150 строк
-//            if (i%10 == 0){
-//                out.flush();
-//            }
+
+        /*
+        * Запись полей отсортированных студентов в файл
+        * */
+
+        ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("sortedStudents.bin"));
+        for (Student student1 : student) {
+            out.writeUTF(student1.getName());
+            out.writeInt(student1.getAge());
+            out.writeInt(student1.getId());
         }
         out.close();
+
+        /*
+        * Чтение отсортированных студентов из файла по полям
+        * */
+
+        ObjectInputStream in2 = new ObjectInputStream(new FileInputStream("sortedStudents.bin"));
+        List<Student> sortedStudentFromFile = new ArrayList<Student>();
+        while(true){
+            try{
+                sortedStudentFromFile.add(new Student(in2.readUTF(),in2.readInt(),in2.readInt()));
+            } catch (EOFException e){
+                break;
+            }
+        }
+        in2.close();
+
+     //   System.out.println(); //для бряки
     }
+
+
+
+
 }

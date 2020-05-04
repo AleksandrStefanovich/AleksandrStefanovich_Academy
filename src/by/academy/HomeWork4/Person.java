@@ -34,11 +34,16 @@ public class Person implements Serializable {
     }
 
 
+    public String getPassword() {
+        return password;
+    }
+
     @Override
     public String toString() {
         return "Person{" +
                 "nick='" + nick +
                 ", registration=" + registration +
+                ", password=" + password +
                 '}';
     }
 
