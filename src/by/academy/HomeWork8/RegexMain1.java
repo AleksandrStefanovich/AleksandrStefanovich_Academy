@@ -21,7 +21,7 @@ public class RegexMain1 {
         /**
          * Опять же исходники. find() сравнивает посимвольно. т.е. вернёт true если часть
          * строки подходит под условие
-         * 
+         *
          * Attempts to find the next subsequence of the input sequence that matches
          * the pattern.
          *  @return  {@code true} if, and only if, a subsequence of the input
