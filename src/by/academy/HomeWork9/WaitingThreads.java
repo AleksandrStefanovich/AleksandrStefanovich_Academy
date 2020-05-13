@@ -10,7 +10,7 @@ public class WaitingThreads {
         for (long i = 0; i < 100L; i++) {
             a += 1;
             try {
-                TimeUnit.MILLISECONDS.sleep(1);
+                TimeUnit.MILLISECONDS.sleep(49); //если поставить 50, будет too late
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -39,6 +39,10 @@ public class WaitingThreads {
         while(true) {
             if (!t1.isAlive()&& counter <= 5) {
                 System.out.println("Done");
+                break;
+            }
+            if (!t1.isAlive()&& counter > 5) {
+                System.out.println("Done too late");
                 break;
             }
         }
